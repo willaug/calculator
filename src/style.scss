@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+//variables
+$ff: 'Open Sans', sans-serif;
+$c1: #fff;
+$c2: #f3f3f3;
+$c3: #151515;
+$c4: #303030;
+$c5: #2196f3;
+$c6: #03a9f4;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: $ff;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    background-color: $c2;
+}
+
+#app{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 320px;
+    background: $c1;
+    border-radius: 30px;
+    padding: 40px;
+
+    .display{
+        position: relative;
+        width: 100%;
+        pointer-events: none;
+        display: flex;
+        height: 80px;
+        margin-bottom: 20px;
+        align-items: flex-end;
+
+        h1{
+            background: transparent;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: $c4;
+            font-size: 32px;
+            font-weight: 600;
+            text-align: right;
+        }
+    }
+
+    .buttons{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(52.5px, 1fr));
+        grid-gap: 10px;
+        user-select: none;
+
+        button{
+            border-radius: 100px;
+            height: 52.5px;
+            cursor: pointer;
+            background: $c2;
+            font-size: 17px;
+            font-weight: 600;
+            color: $c3;
+            transition: all .2s ease;
+
+            &:active{
+                filter: brightness(95%);
+            }
+        }
+
+        .extended{
+            grid-column: 1 / 3;
+        }
+
+        .operation{
+            color: $c5;
+        }
+
+        .advanced{
+            color: $c6;
+        }
+
+        .equals{
+            color: #fff;
+            background: $c5;
+
+            &:active{
+                filter: brightness(100%);
+                background: $c6;
+            }
+        }
+    }
+}
